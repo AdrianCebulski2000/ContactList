@@ -1,0 +1,29 @@
+<div class="bg-body-secondary text-center py-5 rounded-2">
+    <h1 class="display-6 fw-bold">Contact details</h1>
+</div>
+<div class="row mt-5">
+    <div class="col-6">
+        <app-contact-detail-form />
+    </div>
+    <div class="col-6">
+        <ul class="list-group">
+            <li class = "list-group-item d-flex justify-content-between align-items-start mb-2 border px-4 py-3 rounded-3" 
+            *ngFor="let cd of service.list">
+        <div class="flex-grow-1 mouse-hover"
+        (click)="populateForm(cd)">
+            
+            <div class="fw-bold">Imię: {{cd.name}}</div>
+            <div class="fw-bold">Nazwisko: {{cd.surname}}</div>
+            <div class="fw-bold">Kategoria: {{cd.category}}</div>
+            <div class="fw-bold">Numer telefonu: {{cd.phoneNumber}}</div>
+            <div class="fw-bold">E-mail: {{cd.email}}</div>
+            <div class="fw-bold">Hasło: {{cd.password}}</div>
+        </div>
+            <span class="text-secondary">
+                <i class="fa-solid fa-trash-can fa-lg mouse-hover"
+                (click)="onDelete(cd.contactId)"></i>
+            </span>
+            </li>
+        </ul>
+    </div>
+</div>

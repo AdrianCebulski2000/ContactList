@@ -1,0 +1,54 @@
+<form #form="ngForm" (submit)="onSubmit(form)"
+[class.submitted]="service.formSubmitted" novalidate autocomplete="off">
+    <input type="hidden" name ="contactId" [value]="service.formData.contactId">
+ <div class="mb-3">
+    <label>Imię</label>
+    <input class="form-control form-control-lg"
+    placeholder="Imię"
+    #name="ngModel" name = "name"
+    [(ngModel)]="service.formData.name" required minlength="3" maxlength="30">
+ </div>
+ <div class="mb-3">
+    <label>Nazwisko</label>
+    <input class="form-control form-control-lg"
+    placeholder="Nazwisko"
+    #surname="ngModel" name = "surname"
+    [(ngModel)]="service.formData.surname" required minlength="3" maxlength="100">
+ </div>
+ 
+ <div class="mb-3">
+    <label>Kategoria</label>
+    <input class="form-control form-control-lg"
+    placeholder="Kategoria"
+    #category="ngModel" name = "category"
+    [(ngModel)]="service.formData.category" required minlength="3" maxlength="30">
+ </div>
+ <div class="mb-3">
+    <label>Numer Telefonu</label>
+    <input class="form-control form-control-lg"
+    placeholder="Numer Telefonu"
+    #phoneNumber="ngModel" name = "phoneNumber"
+    [(ngModel)]="service.formData.phoneNumber" required minlength="9" maxlength="9">
+ </div>
+ <div class="row">
+<div class="mb-3 col-6">
+    <label>Email</label>
+    <input class="form-control form-control-lg"
+    placeholder="Email"
+    #email="ngModel" name = "email"
+    [(ngModel)]="service.formData.email" required minlength="3" maxlength="30">
+ </div>
+ <div class="mb-3 col-6">
+    <label>Hasło</label>
+    <input class="form-control form-control-lg"
+    placeholder="Hasło"
+    #password="ngModel" name = "password"
+    [(ngModel)]="service.formData.password" required minlength="3" maxlength="30">
+ </div>
+ </div>
+ <div class="d-grid">
+    <button class="btn btn-lg btn-success" type="submit">
+        Submit
+    </button>
+ </div>
+</form>
